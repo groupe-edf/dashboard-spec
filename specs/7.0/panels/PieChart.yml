@@ -1,40 +1,18 @@
-Gauge:
+PieChart:
   allOf:
     - $ref: '_panel.yml#/panel'
     - type: object
       properties:
         fieldConfig:
           $ref: '#/fieldConfig'
+        legend:
+          $ref: '#/legend'
         options:
           $ref: '#/options'
         type:
           type: string
-          default: 'gauge'
+          default: 'piechart'
           readOnly: true
-
-defaults:
-  type: object
-  properties:
-    custom:
-      type: object
-      default: {}
-    links:
-      title: Data Links
-      type: array
-      items:
-        $ref: '_link.yml#/link'
-    mappings:
-      type: array
-      items:
-        $ref: '_mapping.yml#/mapping'
-    max:
-      type: integer
-    min:
-      type: integer
-    thresholds:
-      $ref: '_threshold.yml#/threshold'
-    unit:
-      type: string
 
 fieldConfig:
   type: object
@@ -46,17 +24,52 @@ fieldConfig:
       items:
         $ref: '_override.yml#/override'
 
+defaults:
+  type: object
+  properties:
+    color:
+      type: object
+      properties:
+        mode:
+          type: string
+    custom:
+      type: object
+      default: {}
+    decimals:
+      type: integer
+    links:
+      title: Data Links
+      type: array
+      items:
+        $ref: '_link.yml#/link'
+    mappings:
+      type: array
+      items:
+        $ref: '_mapping.yml#/mapping'
+    unit:
+      type: string
+
 options:
   type: object
   properties:
-    orientation:
+    pieType:
       type: string
-      default: auto
     reduceOptions:
       $ref: '_reduceOptions.yml#/reduceOptions'
-    showThresholdLabels:
-      type: boolean
-      default: false
-    showThresholdMarkers:
-      type: boolean
-      default: true
+    tooltip:
+      type: object
+      properties:
+        mode:
+          type: string
+
+legend:
+  type: object
+  properties:
+    displayMode:
+      type: string
+    placement:
+      type: string
+    values:
+      type: array
+      items:
+        type: string

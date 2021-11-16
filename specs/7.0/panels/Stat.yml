@@ -62,19 +62,7 @@ options:
       type: string
       default: auto
     reduceOptions:
-      type: object
-      properties:
-        calcs:
-          type: array
-          items:
-            type: string
-          default:
-            - mean
-        fields:
-          type: string
-        values:
-          type: boolean
-          default: false
+      $ref: '_reduceOptions.yml#/reduceOptions'
     textMode:
       type: string
       default: auto

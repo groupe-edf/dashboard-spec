@@ -17,6 +17,8 @@ components:
           $ref: 'panels/Gauge.yml#/Gauge'
         Graph:
           $ref: 'panels/Graph.yml#/Graph'
+        PieChart:
+          $ref: 'panels/PieChart.yml#/PieChart'
         Row:
           $ref: 'panels/Row.yml#/Row'
         Stat:
