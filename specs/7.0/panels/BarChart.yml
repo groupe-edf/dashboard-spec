@@ -1,0 +1,32 @@
+BarChart:
+  allOf:
+    - $ref: '_panel.yml#/panel'
+    - type: object
+      properties:
+        fieldConfig:
+          $ref: '#/fieldConfig'
+        options:
+          $ref: '#/options'
+        type:
+          type: string
+          default: 'barchart'
+          readOnly: true
+
+defaults:
+  type: object
+
+fieldConfig:
+  type: object
+  properties:
+    defaults:
+      $ref: '#/defaults'
+    overrides:
+      type: array
+      items:
+        $ref: '_override.yml#/override'
+
+options:
+  type: object
+  properties:
+    orientation:
+      type: string

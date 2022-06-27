@@ -1,17 +1,23 @@
 mapping:
   type: object
   properties:
-    id:
-      type: integer
-    from:
-      type: string
-    operator:
-      type: string
-    to:
-      type: string
-    text:
-      type: string
     type:
-      type: integer
-    value:
       type: string
+    options:
+      type: object
+      properties:
+        from:
+          type: string
+        match:
+          type: string
+        pattern:
+          type: string
+        to:
+          type: string
+        result:
+          type: object
+          properties:
+            index:
+              type: integer
+            text:
+              type: string

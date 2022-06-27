@@ -13,6 +13,8 @@ components:
     Panel:
       type: object
       properties:
+        BarChart:
+          $ref: 'panels/BarChart.yml#/BarChart'
         Gauge:
           $ref: 'panels/Gauge.yml#/Gauge'
         Graph:
